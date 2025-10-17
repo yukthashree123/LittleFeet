@@ -11,7 +11,6 @@ const nextConfig: NextConfig = {
       "www.istockphoto.com",
     ],
   },
-  webpack: (config) => config,
 };
 
 export default nextConfig;
