@@ -1,0 +1,101 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* All slides stacked in the same spot */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Only the active one is visible */
+.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.image {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+/* Hover zoom effect */
+.image:hover {
+  transform: scale(1.05);
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.left {
+  left: 20px;
+}
+
+.right {
+  right: 20px;
+}
+
+/* Dots (indicators) */
+.dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.activeDot {
+  background: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .arrow {
+    font-size: 2rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .dots {
+    bottom: 20px;
+    gap: 8px;
+  }
+}
