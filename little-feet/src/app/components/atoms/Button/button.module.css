@@ -1,0 +1,28 @@
+.button {
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.primary:hover {
+  background: #89c9f4;
+}
+
+.secondary {
+  background: var(--mint-green);
+  color: #333;
+}
+
+.secondary:hover {
+  background: #c8f0d9;
+}

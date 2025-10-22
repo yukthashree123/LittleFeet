@@ -1,30 +1,99 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Neutral background and subtle accents */
+  --background: #fdf6ec;      /* light beige */
+  --card-bg: #ffffff;          /* white cards */
+  --text-dark: #3a3a3a;       /* main text */
+  --text-light: #6b6b6b;      /* secondary text */
+  --accent-pink: #f6bfcf;     /* for buttons and highlights */
+  --accent-blue: #a8d3ff;     /* soft blue highlights */
+  --border-color: #eaeaea;    /* subtle borders */
+  --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+  --transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Reset and body */
 html, body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: var(--background);
-  color: var(--foreground);
-  max-width: 100vw;
-  overflow-x: hidden;
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  height: 100%;
+
+}
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
 }
 
-* {
-  box-sizing: border-box;
+.mainContent {
+  flex: 1; /* takes remaining space between header and footer */
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+
+/* Card styling */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(246, 191, 207, 0.3);
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent-pink);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+button:hover {
+  background-color: #f497a2;
+  box-shadow: 0 6px 12px rgba(246, 191, 207, 0.3);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Inputs */
+input, select {
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 10px 14px;
+  transition: var(--transition);
+  background-color: #fff;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 6px rgba(246, 191, 207, 0.4);
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Container for consistent padding */
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }

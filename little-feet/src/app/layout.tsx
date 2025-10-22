@@ -1,20 +1,26 @@
-// src/app/layout.tsx
 import "./globals.css";
-import Header from "@/app/components/organisms/Header/Header";
-import Footer from "@/app/components/organisms/Footer/Footer";
-import React from "react";
+import Header from "./components/organisms/Header/Header";
+import Footer from "./components/organisms/Footer/Footer";
+import { CartProvider } from "@/app/context/cartContext";
+
+export const metadata = {
+  title: "Little Feet - Baby Products Store",
+  description: "Shop adorable baby essentials from LittleFeet",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
-        <Footer />
+      <body className="appContainer">
+        <CartProvider>
+          <Header />
+          <main className="mainContent">{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

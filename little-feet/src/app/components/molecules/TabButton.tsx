@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Button from "../atoms/Button";
+import Button from "../atoms/Button/Button";
 
 export default function TabButton({
   label,
