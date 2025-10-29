@@ -1,12 +1,16 @@
 .cartContainer {
   max-width: 600px;
+  min-width: 400px;
   margin: 40px auto;
   background: #fff;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
+.cartFlex {
+  display: flex;
+  justify-content: center;
+}
 .cartItem {
   display: flex;
   align-items: center;
@@ -39,4 +43,11 @@
 
 .button:hover {
   background: #1b2c6d;
+}
+@media (max-width: 900px) {
+  .cartContainer {
+    margin: 16px;
+  min-width: 200px;
+
+  }
 }

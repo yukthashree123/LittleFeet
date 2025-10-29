@@ -1,42 +1,55 @@
 :root {
-  /* Neutral background and subtle accents */
-  --background: #fdf6ec;      /* light beige */
-  --card-bg: #ffffff;          /* white cards */
-  --text-dark: #3a3a3a;       /* main text */
-  --text-light: #6b6b6b;      /* secondary text */
-  --accent-pink: #f6bfcf;     /* for buttons and highlights */
-  --accent-blue: #a8d3ff;     /* soft blue highlights */
-  --border-color: #eaeaea;    /* subtle borders */
+  --background: #fdf6ec; /* light beige */
+  --card-bg: #ffffff;
+  --text-dark: #3a3a3a;
+  --text-light: #6b6b6b;
+  --accent-pink: #f6bfcf;
+  --accent-blue: #a8d3ff;
+  --border-color: #eaeaea;
   --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
   --transition: all 0.3s ease;
 }
 
-/* Reset and body */
-html, body {
+/* Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
   font-family: "Poppins", sans-serif;
   background-color: var(--background);
   color: var(--text-dark);
+  overflow-x: clip; /* prevent horizontal scroll */
   scroll-behavior: smooth;
-  min-height: 100vh;
-  height: 100%;
-
 }
+
+/* Full app layout */
 .appContainer {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* full viewport height */
+  min-height: 100vh;
+  width: 100%;
 }
 
 .mainContent {
-  flex: 1; /* takes remaining space between header and footer */
+  flex: 1;
+  width: 100%;
 }
 
+/* Centered inner content */
+/* .innerContent {
+  width: 90%;
+  max-width: 1400px; /* optional for very large screens 
+  margin: 0 auto;
+} */
 
-/* Card styling */
+/* Cards */
 .card {
-  background-color: var(--card-bg);
+  background: var(--card-bg);
   border-radius: 16px;
   box-shadow: var(--shadow-soft);
   transition: var(--transition);
@@ -54,11 +67,9 @@ button {
   border: none;
   border-radius: 24px;
   padding: 10px 22px;
-  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: var(--shadow-soft);
 }
 
 button:hover {
@@ -75,25 +86,23 @@ input, select {
   border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 10px 14px;
+  background: #fff;
   transition: var(--transition);
-  background-color: #fff;
 }
 
 input:focus, select:focus {
   outline: none;
   border-color: var(--accent-pink);
-  box-shadow: 0 0 6px rgba(246, 191, 207, 0.4);
+  box-shadow: 0 0 6px rgba(246,191,207,0.4);
 }
 
-/* Headings */
-h1, h2, h3 {
+/* Typography */
+h1,h2,h3 {
   font-weight: 600;
   color: var(--text-dark);
 }
 
-/* Container for consistent padding */
+/* Container spacing */
 .container {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 20px 0;
 }
